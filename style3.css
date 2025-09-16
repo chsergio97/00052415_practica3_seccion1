@@ -1,0 +1,50 @@
+:root{
+    /* definicion de variables */
+    --blue: #1E90FF;
+    --white: #FFFFFF;
+    --pink: #E12AFB;
+}
+.box{
+    display: flex; /*propiedad que vuelve flexible la manipulacion*/
+    background-color: var(--pink);
+    /*flex-direction: column; propiedad que define la direccion de los elementos en formato columnas*/
+    flex-direction: row; /*propiedad que define la direccion de los elementos en formato filas*/
+    flex-wrap: wrap; /*propiedad que permite que los elementos se ajusten al contenedor*/
+}
+.box div{
+    /*flex-grow: 4; propiedad que permite que los elementos crezcan en proporcion al espacio disponible*/
+    margin: 10px 5px;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: var(--blue);
+    width: 33%; /*propiedad que define el ancho de los elementos*/
+}
+.box div:first-child{
+    /*flex-grow: 12; propiedad que permite que el primer elemento crezca mas que los demas*/
+    width: 64%; /*propiedad que define el ancho del primer elemento*/
+}
+.item-a{
+    grid-area: header;
+    background-color: var(--blue);
+}
+.item-b{
+    grid-area: main;
+    background-color: var(--pink);
+}
+.item-c{
+    grid-area: sidebar;
+    background-color: var(--blue);
+}
+.item-d{
+    grid-area: footer;
+    background-color: var(--pink);
+}
+.container{
+    display: grid; /*propiedad que define un contenedor como una grilla*/
+    grid-template-columns: 100px 100px 100px 100px; /*propiedad que define las columnas de la grilla*/
+    grid-template-rows: auto; /*propiedad que define las filas de la*/
+    grid-template-areas: /*propiedad que define las areas de la grilla*/
+        "header header header"
+        "main main . sidebar"
+        "footer footer footer footer";
+}
